@@ -1,5 +1,7 @@
 export default interface Doggo {
     breed: string,
     description: string,
-    picture?: string
+    value: number;
+    picture?: string,
+    status: boolean
 }

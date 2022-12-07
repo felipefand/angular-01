@@ -3,17 +3,26 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from './../material/material.module';
 import { HeaderComponent } from './header/header.component';
+import { RouterModule } from '@angular/router';
+
+import { ValuePipe } from './pipes/value.pipe';
+import { DoggoDirective } from './directives/doggo.directive';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    ValuePipe,
+    DoggoDirective
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    ValuePipe,
+    DoggoDirective
   ]
 })
 export class SharedModule { }

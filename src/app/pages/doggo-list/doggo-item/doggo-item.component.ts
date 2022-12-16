@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
+import { DoggoService } from 'src/app/services/doggo.service';
 import Doggo from 'src/app/models/Doggo';
 
 @Component({
@@ -16,6 +17,10 @@ export class DoggoItemComponent {
 
   @Input() doggo? : Doggo;
 
+  constructor(private doggoService: DoggoService) {
+
+  }
+
   changeStatus(): void {
     if (this.doggo){
       this.doggo.status = !this.doggo?.status;
@@ -24,5 +29,15 @@ export class DoggoItemComponent {
 
   getColor(): string {
     return this.doggo?.status? "#a4eb88" : "";
+  }
+
+  deleteItem(){
+    if (this.doggo) {
+      this.doggoService.deleteDoggo(this.doggo.id)
+    }
+  }
+
+  ngOnChanges(){
+    console.log("ID: " + this.doggo?.id);
   }
 }

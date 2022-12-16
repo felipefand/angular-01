@@ -1,1 +1,20 @@
-<p>doggo-create works!</p>
+<form class="doggo-form" *ngIf="doggoForm" [formGroup]="doggoForm" (ngSubmit)="onSubmitForm()">
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Breed</mat-label>
+            <input matInput formControlName="breed">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="value">
+        </mat-form-field>
+
+        <mat-checkbox formControlName="status">Checked</mat-checkbox>
+        <button class="submit-btn" mat-stroked-button color="primary" type="submit">Add Breed</button>
+  </form>

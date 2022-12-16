@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+    <!-- <ng-content></ng-content> -->
+    <app-doggo-create requestType = "update" [newDoggo]="data.doggo"></app-doggo-create>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
+

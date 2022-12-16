@@ -1,5 +1,5 @@
 import Doggo from 'src/app/models/Doggo';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DoggoService } from 'src/app/services/doggo.service';
 
@@ -9,7 +9,8 @@ import { DoggoService } from 'src/app/services/doggo.service';
   styleUrls: ['./doggo-create.component.css']
 })
 export class DoggoCreateComponent {
-  newDoggo: Doggo = new Doggo("Breed", "Description", 1, false);
+  @Input() newDoggo: Doggo = new Doggo("Breed", "Description", 1, false);
+  @Input() requestType: string = "post";
 
   constructor(private doggoService: DoggoService) {}
 
@@ -41,6 +42,10 @@ export class DoggoCreateComponent {
 
     this.newDoggo = {id: this.newDoggo.id, ...this.doggoForm?.value}
 
-    this.doggoService.postDoggo(this.newDoggo);
+    if (this.requestType == "post") {
+      this.doggoService.postDoggo(this.newDoggo);
+    } else {
+      this.doggoService.updateDoggo(this.newDoggo.id, this.newDoggo);
+    }
   }
 }

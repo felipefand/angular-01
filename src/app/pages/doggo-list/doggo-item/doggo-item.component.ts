@@ -1,4 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './../../../shared/dialog/dialog.component';
 
 import { DoggoService } from 'src/app/services/doggo.service';
 import Doggo from 'src/app/models/Doggo';
@@ -17,7 +19,7 @@ export class DoggoItemComponent {
 
   @Input() doggo? : Doggo;
 
-  constructor(private doggoService: DoggoService) {
+  constructor(private doggoService: DoggoService, private dialog: MatDialog) {
 
   }
 
@@ -39,5 +41,11 @@ export class DoggoItemComponent {
 
   ngOnChanges(){
     console.log("ID: " + this.doggo?.id);
+  }
+
+  openDialog(){
+    this.dialog.open(DialogComponent, { 
+      data: {title: "Update Doggo", doggo: this.doggo}
+    });
   }
 }

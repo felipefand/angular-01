@@ -9,6 +9,6 @@
    <p>{{ doggo.value | currency }}</p>
    <p>{{ doggo.value | value }}</p>
 
-   <button mat-stroked-button color="primary">Update</button>
+   <button mat-stroked-button color="primary" (click)="openDialog()">Update</button>
    <button mat-stroked-button color="warn" (click)="deleteItem()">Remove</button>
 </mat-expansion-panel>

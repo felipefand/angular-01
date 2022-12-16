@@ -7,8 +7,9 @@ import { SharedModule } from './../shared/shared.module';
 
 import { DoggoItemComponent } from './doggo-list/doggo-item/doggo-item.component';
 import { DoggoListComponent } from './doggo-list/doggo-list.component';
-import { DoggoCreateComponent } from './doggo-create/doggo-create.component';
+import { DoggoCreateComponent } from '../shared/doggo-create/doggo-create.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DoggoCreatePageComponent } from './doggo-create-page/doggo-create-page.component';
 
 
 
@@ -16,8 +17,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     DoggoListComponent,
     DoggoItemComponent,
-    DoggoCreateComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DoggoCreatePageComponent
   ],
   imports: [
     CommonModule,

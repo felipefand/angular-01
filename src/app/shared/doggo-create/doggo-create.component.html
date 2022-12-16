@@ -16,5 +16,5 @@
         </mat-form-field>
 
         <mat-checkbox formControlName="status">Checked</mat-checkbox>
-        <button class="submit-btn" mat-stroked-button color="primary" type="submit">Add Breed</button>
+        <button class="submit-btn" mat-stroked-button color="primary" type="submit"> {{requestType == "post" ? "Create" : "Update"}} Doggo </button>
   </form>

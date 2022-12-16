@@ -54,8 +54,9 @@ export class DoggoService {
     this.doggoList.push(newDoggo);
   }
 
-  updateDoggo(){
-
+  updateDoggo(id: number, updatedDoggo: Doggo){
+    const index = this.doggoList.findIndex((doggo) => doggo.id == id);
+    this.doggoList[index] = updatedDoggo;
   }
 
   deleteDoggo(id: number){
